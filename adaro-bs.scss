@@ -1,0 +1,490 @@
+// ----------------------------------------------???-------------------------
+// 1. Import BS4 file that need modification
+
+@import "./node_modules/bootstrap/scss/_functions";
+@import "./node_modules/bootstrap/scss/_variables";
+@import "./node_modules/bootstrap/scss/_mixins";
+@import "./node_modules/bootstrap/scss/_forms";
+@import "./node_modules/bootstrap/scss/_input-group";
+@import "./node_modules/bootstrap/scss/_custom-forms";
+@import '_tool';
+// @import "./node_modules/bootstrap/scss/buttons";
+// @import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+// ----------------------------------------------???-------------------------
+// 2. Let's begin to build Adaro-BS !!!
+
+// Colors
+$adaro-1: #B7DCEF !default;
+$adaro-2: #0007FE !default;
+$adaro-3: #242395 !default;
+$adaro-4: #000266 !default;
+$adaro-5: #5A61FF !default;
+$transparent: rgba(255, 255, 255, 0) !default;
+
+//btn-borders
+$btn-border-radius: 0.75rem 0.2rem;
+$btn-border-radius-lg: 1rem 0.2rem;
+$btn-border-radius-sm: 0.6rem 0.2rem;
+
+//input-border
+$input-border-radius: 2rem;
+$input-border-radius-lg: 2rem;
+$input-border-radius-sm: 2rem;
+
+//input-group again
+.input-grup {
+  .a {
+    .b {
+      .c {
+        background: pink;
+        height: 1rem;
+        ;
+
+        .x>*:last-child {
+          background: green;
+          color: blue;
+          display: inline-block;
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// warning-red in input-group
+.input-group {
+  .warning-red {
+    color: $red;
+  }
+}
+
+//input-group-prepend-append
+.input-group-prepend,
+.input-group-append {
+  // position: absolute;
+  border-radius: 3rem;
+}
+
+//.input-group radius on after element
+.input-group>*:last-child,
+.input-group>*:last-child::after,
+.input-group-text>*:last-child {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background: pink;
+}
+
+// .input-group-prepend {
+//     left: 0;
+// }
+// .input-group-append {
+//     right: 0;
+// }
+
+//forms
+// .form-control {
+//     border-radius: 3rem;
+// }
+
+// //input-radius
+// .input-group > .input-group-prepend > .btn,
+// .input-group > .input-group-prepend > .input-group-text,
+// .input-group > .input-group-append:not(:last-child) > .btn,
+// .input-group > .input-group-append:not(:last-child) > .input-group-text,
+// .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+// .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+//   @include border-right-radius(2rem);
+// }
+
+// .input-group > .input-group-append > .btn,
+// .input-group > .input-group-append > .input-group-text,
+// .input-group > .input-group-prepend:not(:first-child) > .btn,
+// .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+// .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+// .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+//   @include border-left-radius(2rem);
+// }
+
+//----------- Sidebar ---------------------
+
+
+.sidebar-top {
+  width: 18.75rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  background: $grey-light;
+  color: $grey-dark-font;
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+  /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  // width: 80%;
+  height: 5rem;
+  display: flex;
+  border-radius: 0 0 120px 0;
+  background: #ffffff;
+  border-radius: 0 0 37.5rem 0;
+  // margin-bottom: 3.125rem;
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+
+  img.logo-full {
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    max-width: 7.5rem;
+    width: 100%;
+    -webkit-animation: fadein 0.3s linear forwards;
+    animation: fadein 0.3s linear forwards;
+  }
+
+  img.logo-mini {
+    align-self: center;
+    margin: 0 auto;
+    width: 0;
+    // height: 0;
+    display: none;
+    -webkit-animation: fadeout 0.3s linear forwards;
+    animation: fadeout 0.3s linear forwards;
+  }
+}
+
+.sidebar-top.active {
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+  /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  min-width: 8rem;
+  // max-width: 8rem;
+  width: 8rem;
+  text-align: center;
+  border-radius: 0 0 7rem 0;
+  // width: 87%;
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+  /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+
+  img.logo-full {
+    display: none;
+    width: 0;
+    height: 0;
+    transform: translateX(-1rem);
+    -webkit-animation: fadeout 0.3s linear forwards;
+    animation: fadeout 0.3s linear forwards;
+  }
+
+  img.logo-mini {
+    width: 2.5rem;
+    display: block;
+    max-width: 2.7rem;
+    -webkit-animation: fadein 0.3s linear forwards;
+    animation: fadein 0.3s linear forwards;
+    transform: translateX(-0.5rem);
+  }
+}
+
+.sidebar,
+.sidebars {
+  // min-width: 18.75rem;
+  // max-width: 18.75rem;
+  // background: #7386D5;
+  // color: $color_3;
+  // -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1); /* older webkit */
+  // -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  // transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  //
+  width: 18.75rem;
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  height: calc(100vh - 8rem);
+  z-index: 1099;
+  background: $grey-light;
+  color: $grey-dark-font;
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+  /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+
+  @include breakpoint(xs) {
+    min-width: 8rem;
+    max-width: 8rem;
+    text-align: center;
+    margin-left: -8rem !important;
+    margin-left: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+    /* older webkit */
+    -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+    transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  }
+
+  ul {
+    li {
+      a {
+        text-align: left;
+        padding: 10px;
+        font-size: 1.1em;
+        display: block;
+        color: $grey-dark-font;
+
+        @include breakpoint(xs) {
+          padding: 20px 10px;
+        }
+
+        span {
+          @include breakpoint(xs) {
+            font-size: 0.85em;
+          }
+        }
+
+        &.selected {
+          pointer-events: none;
+          cursor: default;
+          color: $white-so-so;
+          background: $primary;
+          border-radius: 1rem 0;
+        }
+
+        &:hover {
+          color: $white-so-so;
+          background: $primary;
+          border-radius: 1rem 0;
+        }
+
+        i {
+          margin-right: 10px;
+
+          @include breakpoint(xs) {
+            margin-right: 0;
+            display: block;
+            font-size: 1.3em;
+          }
+        }
+      }
+    }
+
+    // li.active {
+    // 	>a {
+    // 		 color: $color_3;
+    // 		 background: #6d7fcc;
+    // 	}
+    // }
+  }
+
+  .sidebar-header {
+    padding: 0 0 0 1.25rem;
+
+    @include breakpoint(xs) {
+      h3 {
+        display: none;
+      }
+
+      strong {
+        display: block;
+      }
+    }
+
+    .wrapper-mini {
+      display: none;
+    }
+  }
+
+  ul.components {
+    padding: 1.25rem 0.625rem 0 1.25rem;
+  }
+
+  ul {
+    a {
+      @include breakpoint(xs) {
+        padding: 10px !important;
+      }
+    }
+  }
+}
+
+.sidebar.active,
+.sidebars.active {
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+  /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  min-width: 8rem;
+  width: 8rem;
+  text-align: center;
+
+  @include breakpoint(xs) {
+    margin-left: 0 !important;
+    -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1);
+    /* older webkit */
+    -webkit-transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+    transition: all 500ms cubic-bezier(0.880, 0.010, 0.220, 1.005);
+  }
+
+  .sidebar-header {
+    .wrapper {
+      display: none;
+    }
+
+    .wrapper-mini {
+      display: block;
+
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .CTAs {
+    display: none;
+  }
+
+  ul {
+    li {
+      a {
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 0.85em;
+        margin-bottom: 0.5rem;
+        white-space: normal;
+
+        i {
+          display: block;
+          font-size: 1.8em;
+          // margin-right: 0;
+          margin-bottom: 5px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    ul {
+      a {
+        padding: 10px !important;
+        margin-left: 0;
+        margin-bottom: 0.7rem;
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    &::after {
+      top: auto;
+      bottom: 10px;
+      right: 50%;
+      -webkit-transform: translateX(50%);
+      transform: translateX(50%);
+    }
+  }
+
+  // .dropdown-toggle.nowraps {
+  // 	white-space: pre-line;
+  // }
+}
+
+// ---------- Floating labels -------------
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  height: 3.125rem;
+  padding: 1.5rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+// floating labels end
+
+// ----------------------------------------------???-------------------------
+// 3. Import BS4
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// ----------------------------------------------???-------------------------
+// 4. Add @ mixin / @extend customization for new class
+
+.rounded-pills {
+  @extend .rounded-pill;
+  border-radius: 3rem;
+}

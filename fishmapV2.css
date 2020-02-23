@@ -1,0 +1,317 @@
+/*
+    Mixin for responsive breakpoints
+*/
+/*
+    Example when using this mixin for breakpoints: 
+
+    aside.primary {
+      @include breakpoint(md) {
+        width: 350px;
+      }
+      @include breakpoint(480px) {
+        display: none;
+      }
+      @include breakpoint($min: 640px, $max: 767px) {
+        text-align: center;
+        font-style: italic;
+      }
+    }
+*/
+/* End of mixin for breakpoints*/
+/* 
+    font-face
+    Those font-face used for including fonts on folder fonts in this solution
+*/
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/open-sans-v17-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans Light"), local("OpenSans-Light"), url("../fonts/open-sans-v17-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v17-latin-300.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-300.woff") format("woff"), url("../fonts/open-sans-v17-latin-300.ttf") format("truetype"), url("../fonts/open-sans-v17-latin-300.svg#OpenSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans-v17-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/open-sans-v17-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v17-latin-regular.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-regular.woff") format("woff"), url("../fonts/open-sans-v17-latin-regular.ttf") format("truetype"), url("../fonts/open-sans-v17-latin-regular.svg#OpenSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/open-sans-v17-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("../fonts/open-sans-v17-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v17-latin-600.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-600.woff") format("woff"), url("../fonts/open-sans-v17-latin-600.ttf") format("truetype"), url("../fonts/open-sans-v17-latin-600.svg#OpenSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/open-sans-v17-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("../fonts/open-sans-v17-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v17-latin-700.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-700.woff") format("woff"), url("../fonts/open-sans-v17-latin-700.ttf") format("truetype"), url("../fonts/open-sans-v17-latin-700.svg#OpenSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* open-sans-800 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/open-sans-v17-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"), url("../fonts/open-sans-v17-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans-v17-latin-800.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-800.woff") format("woff"), url("../fonts/open-sans-v17-latin-800.ttf") format("truetype"), url("../fonts/open-sans-v17-latin-800.svg#OpenSans") format("svg");
+  /* Legacy iOS */
+}
+
+/*
+    End of font face
+*/
+/*
+    Animation - basic
+*/
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+    End of animation
+*/
+/*
+    Global tweaking
+*/
+.verticaled-box {
+  position: relative;
+}
+
+.verticaled {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.input-group {
+  white-space: normal;
+}
+
+/*
+    End of tweaking
+*/
+/* 
+    Colors and additional variable
+*/
+/*
+    End of colors
+*/
+/*
+    Baseline
+*/
+/*
+    End of baseline
+*/
+.fish .card {
+  border: none;
+  background: #adb5bd;
+  border-radius: 1rem;
+}
+
+.content.fish {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fish-lead {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  /*margin-bottom: 1rem;*/
+}
+
+.container-fishmap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-x: scroll;
+  overflow-y: visible;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 100%;
+  height: 100%;
+}
+
+.container-fishmap .table-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  direction: ltr;
+  /*margin: 0.3rem;*/
+}
+
+.container-fishmap .table-row.upstream .table-column {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  border-left: 1px dotted darkgrey;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-fishmap .table-row.downstream .table-column {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-left: 1px dotted darkgrey;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-fishmap .table-row.head {
+  border: 3px solid #fff;
+}
+
+.container-fishmap .table-row .table-column {
+  height: 100%;
+  width: 18rem;
+  /*background: #f5f5f5;*/
+  /*border-right: 3px solid #fff;*/
+  /*border-left: 3px solid #fff;*/
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container-fishmap .table-row.head {
+  height: 2.5rem;
+  background: #007bff;
+  color: white;
+  margin-left: 16px;
+}
+
+/*.some-object {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 16rem;
+    height: (72rem/12);
+    background: aquamarine;
+    text-align: center;
+    font-size: 3rem;
+    color: blue;
+    border: 2px dotted yellow;
+}
+
+*/
+.table-column span {
+  font-size: 0.8rem;
+  /*font-weight: 600;*/
+}
+
+.box {
+  overflow-y: scroll;
+  height: 45%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  direction: rtl;
+}
+
+.box.upstreams {
+  /*transform: rotateX(180deg);*/
+  /*perspective: 1px;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.box.upstreams .table-row.upstream {
+  /*transform: rotateX(-180deg);*/
+  -webkit-perspective: 1px;
+          perspective: 1px;
+}
+
+.box,
+.head {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+/*# sourceMappingURL=fishmapV2.css.map */

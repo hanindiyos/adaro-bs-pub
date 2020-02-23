@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="This is version 0.2 -> working good but need some adjustment like notification navbar-top">
+    <title>BTS-Barge Tracking System </title>
+    <link rel="stylesheet" href="adaro-bs.css">
+    <!-- <link rel="stylesheet" href="/vendor/bootstrap/scss/bootstrap.css"> -->
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="fishmapV2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <!-- Body start -->
+    <div class="wrapper">
+        <div class="sidebar-top">
+            <img class="logo-full" src="logo-adaro-head.png" alt="">
+            <img class="logo-mini" src="logo-adaro-coal.png" alt="">
+        </div>
+        <!-- Sidebar  -->
+        <nav class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="col">
+                            <h4>Antonio Banderas</h4>
+                            <div class="lead">as Admin</div>
+                            <div class="lead">from Adaro Logistics</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper-mini">
+                    <div class="row">
+                        <div class="col">
+                            <div class="fas fa-user"></div>
+                            <h4>Antonio Banderas</h4>
+                            <div class="lead">as Admin</div>
+                            <div class="lead">from Adaro Logistics</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="" alt="">
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Logistic Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nowraps">
+                        <i class="fas fa-home"></i>
+                        <span>Barge Monitoring</span>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Barge Tracking History</a>
+                        </li>
+                        <li>
+                            <a class="selected" href="#">Barge Stoppage</a>
+                        </li>
+                        <li>
+                            <a href="#">Tug Master Timesheet</a>
+                        </li>
+                        <li>
+                            <a href="#">Satellite Map Visulization</a>
+                        </li>
+                        <li>
+                            <a href="#">Fishmap</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Port Activity</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nowraps">
+                        <i class="fas fa-copy"></i>
+                        <span>Contractor Portal</span>
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Master List</a>
+                        </li>
+                        <li>
+                            <a href="#">Ship Owner Activity</a>
+                        </li>
+                        <li>
+                            <a href="#">Report</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content  -->
+        <div class="content-container">
+            <nav class="navbar navbar-expand-lg navbar-bts">
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-top"
+                    aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- This is navbar on top of .content.welcome-bg .content or any containers -->
+                <div class="navbar-collapse collapse" id="navbar-top">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Back</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <!-- <a href="" class="cog-button">
+                        <i class="fas fa-cogs"></i>
+                    </a>
+                    <a href="" class="bell-button dropdown dropdown-toggle">
+                        <i class="fas fa-bell"></i>
+                        <div class="total-notif">
+                            99
+                        </div>
+                    </a> -->
+                    <div class="dropdown">
+                        <!-- Attention : For positioning of notification dropdown related to width device still not complete.
+                            Please remember to adjusting it -->
+                        <div class="bell-button dropdown-Toggle" id="list-notification" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <div class="total-notif">
+                                <span>99</span>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="list-notification">
+                                <a href="#" class="dropdown-item">
+                                    <span class="label-notification">This is label</span>
+                                    <p>This is notification content from some modules </p>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span class="label-notification">This is label</span>
+                                    <p>This is notification content from some modules </p>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span class="label-notification">This is label</span>
+                                    <p>This is notification content from some modules </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- START -->
+            <div class="container-fluid content fish">
+                <div class="fish-lead">Fishmap</div>
+                <div class="container-fishmap">
+                    <div class="box upstreams">
+                        <div class="table-row upstream">
+                            <div class="table-column">
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                            </div>
+                            <div class="table-column">
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                            </div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column">
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                            </div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column">
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                            </div>
+                            <div class="table-column"></div>
+                        </div>
+                    </div>
+                    <div class="table-row head">
+                        <div class="table-column">
+                            <span>Geofence name</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name A</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name BB</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name Sort of</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name hmmm</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name</span>
+                        </div>
+                        <div class="table-column">
+                            <span>Geofence name</span>
+                        </div>
+                    </div>
+                    <div class="box downstreams">
+                        <div class="table-row downstream">
+                            <div class="table-column">
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                                <div class="card" data-toggle="popover" data-popover-content="#tooltip2_8"
+                                    data-placement="right"
+                                    style="margin-bottom:2px;max-width: 200px;cursor:pointer;margin-bottom:2px;padding:0px;"
+                                    id="tooltip_8"
+                                    onclick="document.location.href = '/BargeMonitoring/IndexChangeRequest/8';"
+                                    data-original-title="" title="">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 align-content-lg-center"
+                                            style="margin-left:auto;margin-right:auto;">
+                                            <div class="row">
+                                                <div class="hide">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="margin-top:2px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-12"
+                                                            style="margin-left:17px;margin-bottom:0px;margin-top:5px;padding-bottom:0px;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 560.69 254.61">
+                                                                <defs>
+                                                                    <style>
+                                                                        #coal-id8 {
+                                                                            fill: white;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <title>svg-coal-only</title>
+                                                                <g id="Layer_2" data-name="Layer 2">
+                                                                    <g id="barge-fleet">
+                                                                        <g id="coal-2">
+                                                                            <path id="coal-id8" data-name="coal"
+                                                                                class="cls-1"
+                                                                                d="M560.69,254.61,0,252.34,140.58,126.16S226.91-.23,281.14,0c51.92.2,132.49,116.61,139.32,126.61.31.44.46.68.46.68l139.39,127Z">
+                                                                            </path>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="col-md-12" style="margin-left:10px;margin-top:2px;">
+                                                            <img src="svg-barge-only.svg" style="width:41px;"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card-body"
+                                                style="padding-left:5px;padding-right:5px;padding-top:0px;padding-bottom:5px;margin:0px;">
+                                                <!--h5-- class="card-title">Card title</!--h5-->
+                                                <div class="col-md-12 align-content-lg-center"
+                                                    style="margin-left:auto;margin-right:auto;line-height:1">
+                                                    <span class="card-text" style="font-size:small">Tekad /
+                                                        Bakik</span><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content popover-->
+                                    <div id="tooltip2_8" style="display:none; max-width:100%">
+                                        <div class="popover-heading">Tekad / Bakik</div>
+                                        <div class="popover-body">
+                                            <table class="table">
+                                                <!--
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Parameter</td>
+                                                                            <td>Detail</td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td><b>Tug</b></td>
+                                                        <td>Tekad</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Barge</b></td>
+                                                        <td>Bakik</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Ship Status </b></td>
+                                                        <td>Normal</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Capacity Status </b></td>
+                                                        <td>zero</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Tonage</b></td>
+                                                        <td>0,00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Product</b></td>
+                                                        <td>E4500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Company</b></td>
+                                                        <td>Maritim Barito Perkasa</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Location</b></td>
+                                                        <td>Rangga Ilung</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Last Update</b></td>
+                                                        <td>15 mins Ago</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- end content popover -->
+                                </div>
+                            </div>
+                            <div class="table-column">
+                            </div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                            <div class="table-column"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Body end -->
+    <!-- Scripts -->
+    <script src=" jquery.min.js"></script>
+    <!-- <script src=" popper.js"></script> -->
+    <script src=" bootstrap.bundle.min.js"></script>
+    <script src=" jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src=" custom.js"></script>
+
+    <script>
+        $('.box:first-child').scrollTop($('.box:first-child')[0].scrollHeight);
+
+        $(function () {
+            $.fn.popover.Constructor.Default.whiteList.tr = [];
+            $.fn.popover.Constructor.Default.whiteList.td = [];
+            $.fn.popover.Constructor.Default.whiteList.div = [];
+            $.fn.popover.Constructor.Default.whiteList.tbody = [];
+            $.fn.popover.Constructor.Default.whiteList.thead = [];
+            $.fn.popover.Constructor.Default.whiteList.table = [];
+            $("[data-toggle=popover]").popover({
+                html: true,
+                trigger: "hover",
+                // placement: function (context,source) {
+                // var position = $(source).position();
+                // if (position.top < 300) { // return "bottom" ; // } // if (position.left> 200) {
+                // return "left";
+                // }
+                // if (position.left < 200) { // return "right" ; // } // return "top" ; //}, container: "body" , content:
+                function () {
+                    var content = $(this).attr("data-popover-content");
+                    return
+                    $(content).children(".popover-body").html();
+                },
+                title: function () {
+                    var
+                        title = $(this).attr("data-popover-content");
+                    return $(title).children(".popover-heading").html();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
